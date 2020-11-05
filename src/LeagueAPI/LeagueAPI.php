@@ -3188,7 +3188,7 @@ class LeagueAPI
     {
         $this->setTemporaryContinentRegionForPlatform($this->getSetting(self::SET_PLATFORM));
         $resultPromise = $this->setEndpoint("/lor/match/" . self::RESOURCE_LOR_MATCH_VERSION . "/matches/by-puuid/{$encrypted_puuid}/ids")
-            ->setResource(self::RESOURCE_LOR_MATCH, "/matches/%i")
+            ->setResource(self::RESOURCE_LOR_MATCH, "/matches/by-puuid/%s/ids")
             ->useKey(self::SET_LOR_KEY)
             ->makeCall();
 
@@ -3220,7 +3220,7 @@ class LeagueAPI
     {
         $this->setTemporaryContinentRegionForPlatform($this->getSetting(self::SET_PLATFORM));
         $resultPromise = $this->setEndpoint("/lor/match/" . self::RESOURCE_LOR_MATCH_VERSION . "/matches/{$match_id}")
-            ->setResource(self::RESOURCE_LOR_MATCH, "/matches/%i")
+            ->setResource(self::RESOURCE_LOR_MATCH, "/matches/%s")
             ->useKey(self::SET_LOR_KEY)
             ->makeCall();
 
@@ -3240,7 +3240,7 @@ class LeagueAPI
     const RESOURCE_LOR_RANKED_VERSION = 'v1';
 
     /**
-     * Get LEADERBOARDS
+     * Get LOR LEADERBOARDS
      *
      * @cli-name get-leaderboards
      * @cli-namespace lor-ranked
@@ -3259,7 +3259,7 @@ class LeagueAPI
     {
         $this->setTemporaryContinentRegionForPlatform($this->getSetting(self::SET_PLATFORM));
         $resultPromise = $this->setEndpoint("/lor/ranked/" . self::RESOURCE_LOR_RANKED_VERSION . "/leaderboards")
-            ->setResource(self::RESOURCE_LOR_RANKED, "/leaderboards/%i")
+            ->setResource(self::RESOURCE_LOR_RANKED, "/leaderboards")
             ->useKey(self::SET_LOR_KEY)
             ->makeCall();
 

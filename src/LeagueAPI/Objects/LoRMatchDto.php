@@ -17,6 +17,7 @@
 
 namespace RiotAPI\LeagueAPI\Objects;
 
+
 /**
  *   Class LoRMatchDto
  *
