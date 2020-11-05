@@ -17,12 +17,20 @@
 
 namespace RiotAPI\LeagueAPI\Objects;
 
-
+/**
+ *   Class LoRMatchDto
+ *
+ * Used in:
+ *   lor-match (v1)
+ *     @link https://developer.riotgames.com/apis#lor-match-v1/GET_getMatch
+ *
+ * @package RiotAPI\LeagueAPI\Objects
+ */
 class LoRMatchDto extends ApiObject
 {
-    /** @var MetadataDto[] $metadata */
+    /** @var MetadataDto $metadata */
     public $metadata;
 
-    /** @var InfoDto[] $metadata */
+    /** @var LoRInfoDto $info */
     public $info;
 }

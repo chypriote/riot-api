@@ -112,6 +112,8 @@ class InvokeMethodLeagueAPI extends Command
 		}
 
 		$output->write(json_encode($data, $json_options));
+
+		return Command::SUCCESS;
 	}
 
 	/**

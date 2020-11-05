@@ -13,7 +13,7 @@ class LoRPlayerDto extends ApiObject
     public $deck_id;
 
     /**
-     *   Code for the deck played. Refer to LOR documentation for details on deck codes.
+     * Code for the deck played. Refer to LOR documentation for details on deck codes.
      *
      * @var string $deck_code
      */
@@ -26,7 +26,7 @@ class LoRPlayerDto extends ApiObject
     public $game_outcome;
 
     /**
-     *   The order in which the players took turns.
+     * The order in which the players took turns.
      *
      * @var string $order_of_play
      */

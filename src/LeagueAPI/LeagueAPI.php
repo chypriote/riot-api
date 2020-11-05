@@ -207,6 +207,7 @@ class LeagueAPI
 		SETTINGS_ALLOWED = [
 			self::SET_KEY,
 			self::SET_TFT_KEY,
+			self::SET_LOR_KEY,
 			self::SET_REGION,
 			self::SET_VERIFY_SSL,
 			self::SET_KEY_INCLUDE_TYPE,
@@ -3166,14 +3167,14 @@ class LeagueAPI
     const RESOURCE_LOR_MATCH_VERSION = 'v1';
 
     /**
-     * Get matches id with Puuid
+     * Get a list of LoR matches id
      *
-     * @cli-name get-by-puuid
-     * @cli-namespace tft-match
+     * @cli-name get-ids-by-puuid
+     * @cli-namespace lor-match
      *
      * @param string $encrypted_puuid
      *
-     * @return Objects\MatchDto
+     * @return string[]
      *
      * @throws SettingsException
      * @throws RequestException
@@ -3193,7 +3194,7 @@ class LeagueAPI
 
         $this->unsetTemporaryRegion();
         return $this->resolveOrEnqueuePromise($resultPromise, function(array $result) {
-            return new Objects\MatchDto($result, $this);
+            return $result;
         });
     }
 
@@ -3201,11 +3202,11 @@ class LeagueAPI
      * Get matchs with matchId
      *
      * @cli-name get-by-matchid
-     * @cli-namespace tft-match
+     * @cli-namespace lor-match
      *
      * @param string $match_id
      *
-     * @return Objects\LoRMatchDto()
+     * @return Objects\LoRMatchDto
      *
      * @throws SettingsException
      * @throws RequestException
